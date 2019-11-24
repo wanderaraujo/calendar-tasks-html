@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-framework="javascript">
+<head>
+    <meta charset="utf-8">
+    <title>Calendar App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" 
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/calendar.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app" class="main">
+
+        <div class="date-month">
+            <h2><i class="far fa-calendar-alt"></i> Appointments {{ month }} {{ year }}</h2>
+        </div>
+       <!-- area callendar appointment -->
+        <div class="calendar">
+
+            <table style="overflow-x:auto;">
+                <!-- days week  -->
+                <tr class="date-days">
+                    <th v-for="days in daysWeek">
+                        <h3>{{ days }}</h3>
+                    </th>
+                </tr>
+                <!-- end days week  -->
+                
+                <!-- days callendar  -->
+                <tr class="date-days">
+                    <td v-for="date in endDateMonth" v-if="date <= 7" @click="openModal(date)" ref="date">
+                        <p class="day">{{ date }}</p>
+                    </td>
+                </tr>
+
+                <tr class="date-days">
+                    <td v-for="date in endDateMonth" v-if="date >= 8 && date <= 14 " @click="openModal(date)" ref="date">
+                        <p class="day">{{ date }}</p>
+                    </td>
+                </tr>
+
+                <tr class="date-days">
+                    <td v-for="date in endDateMonth" v-if="date >= 15 && date <= 21 " @click="openModal(date)" ref="date">
+                        <p class="day">{{ date }}</p>
+                    </td>
+                </tr>
+
+                <tr class="date-days">
+                    <td v-for="date in endDateMonth" v-if="date >= 22 && date <= 28 " @click="openModal(date)" ref="date">
+                        <p class="day">{{ date }}</p>
+                    </td>
+                </tr>
+
+                <tr class="date-days">
+                    <td v-for="date in endDateMonth" v-if="date >= 29" @click="openModal(date)" ref="date">
+                        <p class="day">{{ date }}</p>
+                    </td>
+                </tr>
+                <!-- end days callendar  -->
+
+            </table>
+        </div>
+       <!-- end area callendar appointment -->
+
+        <!-- modal add, edit remove events-->
+        <div class="modal" v-show="modal">
+            <div class="modal-content">
+                <h3 v-show="!editMode"> <i class="far fa-calendar-alt"></i>
+                    Add new appointment day {{ dayAppointment}}
+                </h3>
+                <h3 v-show="editMode"> <i class="far fa-calendar-alt"></i> 
+                    Edit appointment day {{ dayAppointment }}
+                </h3>
+                
+                <div>
+                    <input type="text" v-model="nameAppointment" placeholder="Name Appointment"><br>
+                    <i class="error-msg">{{messageErro}}</i><br>
+                </div>
+
+                <div>
+                    <button class="add" @click="addAppointment()" v-show="!editMode"><i class="fas fa-check"></i> Add</button>
+                    <button class="edit" @click="editAppointment()" v-show="editMode"><i class="fas fa-pencil-alt"></i>
+                        Edit</button>
+                    <button class="delete" @click="deleteAppointment()" v-show="editMode"><i class="fas fa-times"></i>
+                        Delete</button>
+                    <button class="cancel" @click="closeModal()"><i class="fas fa-ban"></i> Cancel</button>
+                </div>
+            </div>
+        </div>
+        <!-- end modal add, edit remove events -->
+
+    </div>
+
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="./js/calendar.js"></script>
+</body>
+
+</html>

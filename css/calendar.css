@@ -1,0 +1,149 @@
+/* set background color for all page */
+body {
+  background-color: rgb(41, 98, 177);
+}
+
+/* set type font for all page */
+* {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+/* set size page */
+.main {
+  width: 100vw;
+}
+
+/* month and year top page */
+.date-month {
+  text-align: center;
+  color: white;
+}
+
+/* appointment in box table */
+.appointment {
+  background-color: rgba(255, 187, 0, 0.733);
+  border: 2px solid white;
+}
+
+/* hover appointment in box table */
+.appointment:hover {
+  background-color: rgb(118, 189, 118);
+}
+
+/* days in calendar box */
+.calendar{
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+/* days in calendar box table */
+.day{
+  text-align: center;
+  font-size: 2em;
+  color: white;
+}
+
+/* table calendar */
+table {
+  width: auto;
+  height: auto;
+}
+
+/* td table dates and appointments */
+td {
+  border: 1px solid #ccc;
+  height: 15vh;
+  width: 15vw;
+  border-collapse: collapse;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px rgb(197, 184, 184);
+  background-color: gray;
+}
+
+/* td table dates and appointments hover */
+td:hover {
+  background-color: rgb(197, 194, 194);
+  cursor:pointer
+}
+
+/* th table days weekend */
+th {
+  color: white;
+  border: 1px solid #ccc;
+  height: 8vh;
+  width: auto;
+  border-collapse: collapse;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px rgb(197, 184, 184);
+  background-color: gray;
+}
+
+/* modal */
+.modal {
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  width: 100%; 
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* modal add, edit and delete appointment */
+.modal-content {
+  color: white;
+  background-color: gray;
+  border: 1px solid rgb(197, 184, 184);;
+  padding: 30px;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+/* input text */
+input{
+  width: 20vw;
+  height: 2rem;
+  margin: 1em;
+}
+
+/* buttons */
+button{
+  width: 6rem;
+  height: 2rem;
+  font-size: 15px;
+  margin-top: 10px;
+  cursor:pointer
+}
+
+/* add button event */
+.add{
+  background-color: #29A745;
+  border-color: #29A745;
+}
+
+/* edit button event */
+.edit{
+  background-color: #16A2B7;
+  border-color: #16A2B7;
+}
+
+/* delete button event */
+.delete{
+  background-color:rgb(189, 73, 85) ;
+  border-color: rgb(189, 73, 85); 
+}
+
+/* cancel button event */
+.cancel{
+  background-color: #FFC22B;
+  border-color: #FFC22B;
+}
+
+/* error message */
+.error-msg{
+  color: #FFC22B;
+  padding-bottom: 10px;
+}
