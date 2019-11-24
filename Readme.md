@@ -14,4 +14,9 @@ Study html, js and css. Adding tasks in current month, able also delete or edit 
 
 ## Images
 
+![Empty calendar](https://github.com/wanderaraujo/calendar-tasks-html/blob/master/prints/image01.png)
+
+![Add task calendar](https://github.com/wanderaraujo/calendar-tasks-html/blob/master/prints/image02.png)
+
+![Tasks](https://github.com/wanderaraujo/calendar-tasks-html/blob/master/prints/image03.png)
 
